@@ -1,0 +1,147 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+.container {
+  position: absolute;
+  max-width: 350px; /*max 350 px alan kaplasın*/
+  width: 100%; /* kaplanan alanın 100% kullanalım*/
+  padding: 25px 30px;
+  border: 1px solid pink;
+  border-radius: 5px;
+  opacity: 0.8;
+  background-color: #dfabc5;
+  box-shadow: 0px 7px 29px 0px rgba(100, 100, 111, 0.5); /*gölgelendirme efekti*/
+}
+body {
+  display: grid; /*containeri sayfanın ortasına almak için*/
+  height: 100vh;
+  place-items: center; /*containeri sayfanın ortasına almak için*/
+  background: linear-gradient(to top, #dfabc5 0%, #1da1f2 100%);
+  /*yukarıdan aşağı renk akıyormuş rengi verdik*/
+}
+.container img {
+  position: relative;
+  height: 90px;
+  width: 90px;
+  left: 70%;
+  top: 5px;
+  border-radius: 50%;
+  border: 5px solid rgb(255, 53, 174);
+}
+.container .tittle {
+  font-size: 30px;
+  font-weight: 600;
+  margin: 20px 0 10px 0;
+  position: relative;
+}
+.container .tittle::before {
+  content: "";
+  position: absolute;
+  height: 4px;
+  width: 33px;
+  bottom: 3px;
+  left: 0;
+  border-radius: 5px;
+  background: #1da1f2;
+}
+.box {
+  width: 100%;
+  position: relative;
+  height: 40px;
+  margin-top: 25px;
+}
+.box input {
+  width: 100%;
+  height: 100%;
+  outline: none; /*textlerin içine yazı yazarken hazırolan siyah border özelliği olmasın diye yazdık*/
+  font-size: 16px;
+  border: 0;
+}
+.container form .underline::before {
+  /*altındaki kırmızı çizgi doluyormuş animasyonu vermek için*/
+  position: absolute;
+  content: "";
+  height: 2px;
+  width: 100%;
+  background: #ccc;
+  bottom: 0;
+  right: 0;
+
+  border-radius: 5px;
+}
+.container form .underline::after {
+  position: absolute;
+  content: "";
+  height: 2px;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  background-color: red;
+  transform: scaleX(0); /*animasyon geçiş 0 dan başlasın*/
+  transform-origin: left; /*dolma işlemi soldan sağa doğru gidecek*/
+  transition: all 0.3s ease;
+}
+.container form .box input:focus ~ .underline::after,
+.container form .box input:valid ~ .underline::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+.container .buton {
+  border-radius: 5px;
+  font-size: 17px;
+  cursor: pointer; /* üzerine gelince el işareti çıkması için*/
+  background-color: red;
+  color: white;
+}
+.container .buton:hover {
+  transition: 0.3s;
+  background-color: rgb(194, 42, 42);
+  color: black;
+  letter-spacing: 2px; /*yazıların arasındaki boşluk 2px artar*/
+  /* font-weight: bold; yazının kallınlığını arttırmak için*/
+}
+.container .text {
+  text-align: center;
+  letter-spacing: 1px;
+  margin: 20px 0;
+}
+.container .github a,
+.container .twitter a,
+.container .facebook a {
+  position: relative;
+  display: block; /* aralarında mesafe olması için*/
+  height: 45px;
+  width: 100%;
+  font-size: 15px;
+  text-decoration: none;
+  padding-left: 20px;
+  color: white;
+  line-height: 45px;
+  border-radius: 5px;
+}
+.github a {
+  background-color: #171515;
+  margin: 20px 0 15px 0;
+}
+.github a:hover {
+  background-color: #534f4f;
+}
+.twitter a {
+  background-color: #1da1f2;
+  margin: 20px 0 15px 0;
+}
+.twitter a:hover {
+  background-color: #3d8ce6;
+}
+.facebook a {
+  background-color: #39569c;
+  margin: 20px 0 15px 0;
+}
+.facebook a:hover {
+  background-color: #6b4ae3;
+}
